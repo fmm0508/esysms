@@ -35,7 +35,10 @@ function initialiseState() {
 
 function subscribe() {
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-  serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
+  serviceWorkerRegistration.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: 'BFWrjD5cfIdG7imaQfV59T-uoVKIYOF7_GV1inlpac1dvZCXG6y88RM0Ix4JOPYRASQCmr1nj1l-gTDinan9ldg'
+    })
     .then(function(subscription) {
       console.log(subscription);
     //return sendSubscriptionToServer(subscription);
