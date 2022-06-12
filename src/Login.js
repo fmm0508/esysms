@@ -22,7 +22,7 @@ function Login() {
   function onSubmitHandle(e) {
     e.preventDefault();
 
-    if(eeID == employeeId && pn == pin) {
+    if(eeID === employeeId && pn === pin) {
       console.log("Ask for notification permission");
     }
   }
