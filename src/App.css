@@ -8,3 +8,13 @@ input {
 button {
   margin-top: 1rem;
 }
+
+.card {
+  border: 3px dashed #C70039;
+  margin: 5rem;
+  padding: 1rem;
+}
+
+.key-word {
+  color: #1A1975;
+}
