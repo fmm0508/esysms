@@ -19,10 +19,13 @@ const messaging = firebase.messaging();
 const getToken = async setTokenFound => {
   let currentToken = "";
   try {
-    currentToken = await messaging.getToken({ vapidKey: VAPID});
+    currentToken = await messaging.getToken({ vapidKey:
+       VAPID});
     if(currentToken) {
+      setTokenFound(true);
       console.log("setTokenFound true");
     }else {
+      setTokenFound(false);
       console.log("setTokenFound false");
     }
   }catch(err) {
