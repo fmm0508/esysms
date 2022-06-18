@@ -16,7 +16,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-export const getToken = async setTokenFound => {
+const getToken = async setTokenFound => {
   let currentToken = "";
   try {
     currentToken = await messaging.getToken({ vapidKey: VAPID});
@@ -31,10 +31,12 @@ export const getToken = async setTokenFound => {
   return currentToken;
 }
 
-export const onMessageListener = () => {
-  new Promise(resolve => {
+const onMessageListener = () => {
+  return new Promise(resolve => {
     messaging.onMessage(payload => {
       resolve(payload);
     });
   });
 }
+
+export { onMessageListener, getToken };

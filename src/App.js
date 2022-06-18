@@ -1,6 +1,25 @@
 import "./App.css";
+import React, { useState } from "react";
+import { onMessageListener } from "./firebase_init";
+import Notifications from "./components/Notifications";
+import ReactNotification from "./components/ReactNotification";
 
 function App() {
+  const [show, setShow] = useState(false);
+  const [notification, setNotification] = useState({ title: "", body: ""});
+  console.log(show, notification);
+  onMessageListener()
+    .then(payload => {
+      setShow(true);
+      setNotification({
+        title: payload.notification.title,
+        body: payload.notification.body
+      });
+      console.log(payload);
+    }).catch(err => {
+      console.error("failed: ", err);
+    });
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("firebase-messaging-sw.js")
@@ -15,7 +34,18 @@ function App() {
   return (
     <div>
       <center>
-      <h1 className="key-word">App.js</h1>
+        { show ? 
+          (
+            <ReactNotification 
+              title={notification.title}
+              body={notification.body}
+            />
+          ) : 
+          (
+            <></>
+          )
+        }
+      <Notifications />
       </center>
     </div>
   );
