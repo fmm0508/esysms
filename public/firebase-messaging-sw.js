@@ -16,14 +16,14 @@ const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
   console.log('[service-worker] Received background message ', payload);
-  // Customize notification here
-  // const notificationTitle = 'Background Message Title';
-  // const notificationOptions = {
-  //   body: 'Background Message body.',
-  // };
-  const notificationTitle = payload.notification.title;
+ // Customize notification here
+  const notificationTitle = 'Background Message Title';
   const notificationOptions = {
-    body: payload.notification.body,
+    body: 'Background Message body.',
   };
+  // const notificationTitle = payload.notification.title;
+  // const notificationOptions = {
+  //   body: payload.notification.body,
+  // };
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
