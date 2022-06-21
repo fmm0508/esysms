@@ -33,20 +33,27 @@ function App() {
   }
   return (
     <div>
-      <center>
-        { show ? 
-          (
-            <ReactNotification 
-              title={notification.title}
-              body={notification.body}
-            />
-          ) : 
-          (
-            <></>
-          )
-        }
+      { show ? 
+        (
+          <ReactNotification 
+            title={notification.title}
+            body={notification.body}
+          />
+        ) : 
+        (
+          <div>
+            <center>
+              <h1 className="key-word">Demo</h1>
+              <h2>Firebase Clouding Messaging.Push Notifications</h2>
+              <h1>----------------------------------------</h1>
+              <h3>Token logged in the console</h3>
+              <h3>Notification will show on top right</h3>
+              <h1>-----------------------------------------</h1>
+            </center>
+          </div>
+        )
+      }
       <Notifications />
-      </center>
     </div>
   );
 }
