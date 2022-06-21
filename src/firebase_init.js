@@ -1,16 +1,16 @@
 import firebase from "firebase/app";
 import "firebase/messaging";
 
-const VAPID = "BNj9Y1nwOk3kMLXUOCmfNQhYYaiOSI1t2FMFh1p6U5QHZHDRUqEQhLeHl_Q7xWx_PpqP4nzPWz_8-6C1euXsYNQ";
+const VAPID = "BP2LUcBRBpCPX8OkoAK0n-hF_kVcI8VK7Pv5nT2BVqno9CRmA--8A342WfXX5pxYsOzKOkRSZQh3uJinRztFpd8";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyByRRMhZMb7olnddMDpX4OwS89ct1WiD8M",
-  authDomain: "esysms.firebaseapp.com",
-  projectId: "esysms",
-  storageBucket: "esysms.appspot.com",
-  messagingSenderId: "958045728579",
-  appId: "1:958045728579:web:f6e6a85390c7af6ae189f6",
-  measurementId: "G-SS01P86MTJ"
+  apiKey: "AIzaSyDCLsrbVemTfG7geA0blN1CltMXHFJtt_0",
+  authDomain: "push-notification-app-f486d.firebaseapp.com",
+  projectId: "push-notification-app-f486d",
+  storageBucket: "push-notification-app-f486d.appspot.com",
+  messagingSenderId: "230606958907",
+  appId: "1:230606958907:web:e1ffc0bc19203edfd8471e",
+  measurementId: "G-2K7HM54HPW"
 };
 
 firebase.initializeApp(firebaseConfig);
